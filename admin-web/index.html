@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LedgerLite Admin</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f5f7fb; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; }
+    .card { background: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    button { padding: 10px 14px; border: none; border-radius: 8px; background: #dc3545; color: white; }
+  </style>
+</head>
+<body>
+  <h1>LedgerLite Admin Panel</h1>
+  <div class="grid">
+    <div class="card"><h3>Total users</h3><p id="users">-</p></div>
+    <div class="card"><h3>Transaction volume</h3><p id="volume">-</p></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Account moderation</h3>
+    <input id="userId" placeholder="User ID" style="width:60%;padding:8px" />
+    <button onclick="suspend()">Suspend account</button>
+  </div>
+
+<script>
+async function loadStats() {
+  document.getElementById('users').innerText = '12345';
+  document.getElementById('volume').innerText = '₦1,430,000';
+}
+function suspend() { alert('Suspend request sent (mock).'); }
+loadStats();
+</script>
+</body>
+</html>
